@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A Birthday Surprise 🎁</title>
+<meta name="theme-color" content="#1a0b24">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Caveat:wght@500&family=Inter:wght@400;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Caveat:wght@500&family=Inter:wght@400;600&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<canvas id="star"></canvas>
+<canvas id="cf"></canvas>
+
+<!-- 1. Gift -->
+<section class="scene on" id="s1">
+  <div class="gift">🎁</div>
+  <p class="sub">A SURPRISE FOR</p>
+  <div class="name" id="n1"></div>
+  <p class="sub">Handmade — just for you</p>
+  <button data-next>Unwrap</button>
+</section>
+
+<!-- 2. Cake -->
+<section class="scene" id="s2">
+  <h2>First things first 🎂</h2>
+  <p class="sub">Tap the candle to make a wish &amp; blow it out</p>
+  <div class="cake" id="cake">
+    <div class="l l1"></div><div class="l l2"></div><div class="l l3"></div>
+    <div class="candle"><div class="flame"></div></div>
+  </div>
+  <button data-next id="n2" style="display:none">Continue</button>
+</section>
+
+<!-- 3. Balloons -->
+<section class="scene" id="s3">
+  <h2>Pop the balloons 🎈</h2>
+  <p class="sub">Each one holds a reason you're loved</p>
+  <div class="balloons" id="bl"></div>
+  <div class="reasons" id="rl"></div>
+  <button data-next id="n3" style="display:none">Keep going</button>
+</section>
+
+<!-- 4. Memories -->
+<section class="scene" id="s4">
+  <h2>A walk down memory lane</h2>
+  <div class="pol" id="pol"><div class="ph" id="pimg"></div><p id="pcap"></p></div>
+  <div class="nav">
+    <button class="ghost" id="pv" aria-label="Previous">‹</button>
+    <span class="sub" id="pc"></span>
+    <button class="ghost" id="nx" aria-label="Next">›</button>
+  </div>
+  <button data-next>Keep going</button>
+</section>
+
+<!-- 5. Letter -->
+<section class="scene" id="s5">
+  <h2 id="h5">One last thing…</h2>
+  <div class="env" id="env">💌</div>
+  <p class="sub" id="t5">Tap to open your letter</p>
+  <div class="letter" id="lett" style="display:none"></div>
+  <button data-next id="n5" style="display:none">Finish</button>
+</section>
+
+<!-- 6. Finale -->
+<section class="scene" id="s6">
+  <div class="big">Happy<br>Birthday</div>
+  <div class="name" id="n6" style="font-size:56px"></div>
+  <p class="sub" id="fr"></p>
+  <button class="ghost" id="rep">Replay the surprise ↺</button>
+</section>
+
+<audio id="song" src="audio/song.mp3" preload="none"></audio>
+<script src="script.js"></script>
+</body>
+</html>

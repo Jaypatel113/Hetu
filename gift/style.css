@@ -1,0 +1,67 @@
+:root{
+  --bg1:#1a0b24;
+  --bg2:#5a1f4a;
+  --gold:#f6c177;
+  --pink:#ff8fa3;
+  --txt:#fff4ec;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0}
+body{
+  background:radial-gradient(ellipse at 50% 100%,var(--bg2),var(--bg1) 70%);
+  background-color:var(--bg1);
+  color:var(--txt);
+  font-family:Inter,system-ui,sans-serif;
+  overflow:hidden;
+  -webkit-tap-highlight-color:transparent;
+}
+.scene{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:24px;text-align:center;z-index:1}
+.scene.on{display:flex;animation:fade .7s ease}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+h1,h2{font-family:'Playfair Display',Georgia,serif;margin:0}
+h2{font-size:clamp(22px,5vw,32px)}
+.sub{opacity:.75;font-size:14px;margin:0}
+button{font:600 15px Inter,sans-serif;border:0;border-radius:999px;padding:13px 28px;background:linear-gradient(135deg,#f6c177,#e8907a);color:#2a1020;cursor:pointer;box-shadow:0 6px 24px #e8907a55}
+button:active{transform:scale(.96)}
+button.ghost{background:transparent;color:var(--gold);border:1px solid var(--gold);box-shadow:none}
+.gift{font-size:56px;animation:bob 2s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-8px)}}
+.name{font-family:'Caveat',cursive;color:var(--gold);font-size:42px}
+
+/* cake */
+.cake{position:relative;width:170px;height:120px;margin-top:40px;cursor:pointer}
+.cake .l{position:absolute;left:0;right:0;border-radius:8px}
+.cake .l1{bottom:0;height:46px;background:#f4a6b8}
+.cake .l2{bottom:46px;height:38px;left:14px;right:14px;background:#ffc9d4}
+.cake .l3{bottom:84px;height:10px;left:6px;right:6px;background:#fff;border-radius:10px}
+.candle{position:absolute;bottom:94px;left:50%;width:8px;height:30px;margin-left:-4px;background:repeating-linear-gradient(#fff 0 6px,#ff8fa3 6px 12px);border-radius:3px}
+.flame{position:absolute;top:-20px;left:-3px;width:14px;height:20px;background:radial-gradient(#fff6c0,#ffb02e 60%,transparent 72%);border-radius:50% 50% 50% 50%/60% 60% 40% 40%;animation:fl .25s infinite alternate;box-shadow:0 0 30px 10px #ffb02e66}
+@keyframes fl{to{transform:scale(1.12) rotate(4deg)}}
+.out .flame{display:none}
+
+/* balloons */
+.balloons{position:relative;width:min(340px,90vw);height:200px}
+.b{position:absolute;width:56px;height:70px;border-radius:50% 50% 48% 48%;cursor:pointer;animation:sway 3s ease-in-out infinite;box-shadow:inset -8px -8px 14px #0002}
+.b::after{content:"";position:absolute;left:50%;top:100%;width:1px;height:50px;background:#fff6}
+@keyframes sway{50%{transform:translateY(-10px) rotate(3deg)}}
+.reasons{display:flex;flex-direction:column;gap:8px;width:100%;max-width:340px;min-height:40px}
+.reason{padding:10px 14px;border:1px solid var(--gold);border-radius:12px;background:#ffffff0f;font-size:14px;text-align:left;animation:fade .5s}
+
+/* polaroids */
+.pol{background:#fff;color:#3a2a30;padding:12px 12px 8px;border-radius:4px;width:min(250px,70vw);transform:rotate(-3deg);box-shadow:0 14px 40px #0008;transition:transform .4s}
+.pol .ph{height:min(250px,45vh);background:linear-gradient(135deg,#ffd6dd,#f6c177);display:flex;align-items:center;justify-content:center;font-size:64px;overflow:hidden}
+.pol .ph img{width:100%;height:100%;object-fit:cover;display:block}
+.pol p{font-family:Caveat,cursive;font-size:22px;margin:8px 0 2px}
+.nav{display:flex;gap:10px;align-items:center}
+
+/* envelope + letter */
+.env{font-size:96px;cursor:pointer;animation:bob 2s infinite;filter:drop-shadow(0 10px 20px #0006)}
+.letter{background:#fbf3e4;color:#4a3338;font-family:Caveat,cursive;font-size:23px;line-height:1.35;text-align:left;padding:24px;border-radius:6px;max-width:360px;width:100%;max-height:52vh;overflow:auto;box-shadow:0 14px 40px #0008;white-space:pre-wrap}
+.big{font-family:'Playfair Display',Georgia,serif;font-size:clamp(34px,10vw,64px);letter-spacing:.06em;text-transform:uppercase;text-shadow:0 0 30px #f6c17788;line-height:1.1}
+
+canvas{position:fixed;inset:0;pointer-events:none}
+#cf{z-index:5}
+#star{z-index:0}
